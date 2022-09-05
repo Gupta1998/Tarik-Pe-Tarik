@@ -1,4 +1,4 @@
-# Tarikh-Pe-Tarikh
+# Tarik-Pe-Tarik
 
 Hi everyone!
 
