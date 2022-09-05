@@ -67,14 +67,14 @@ router.get("/setup", async (req, res) => {
 
 // show add event page
 router.get("/add", isLoggedIn, (req, res) => {
-  res.render("main");
+  res.render("main", { title: "Add Event" });
 });
 
 // get all events
 router.get("/", async (req, res) => {
   try {
     const events = await Event.find().sort({ registrationDate: 1 });
-    res.render("showEvents", { events });
+    res.render("showEvents", { title: "Home", events });
   } catch (e) {
     res.send(e);
   }
