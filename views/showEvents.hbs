@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <h3>Tarik-Pe-Tarik...</h3>
+        <nav class="login">
+            <ul class="nav-links">
+                <li><a href="/login">Login</a></li>   
+            </ul>
+        <nav>
+    </header>
+    
+    <div class="image-wrapper">
+        <img src="images/tarikh pe tarikh.png" class="image">
+    </div>
+
+    <p class="fun-para">A fun project to remember important dates!</p>
+        <div class="table-wrapper">
+            <table class="table">
+                <tr>
+                    <th>Event Name</th>
+                    <th>Eligibility Criteria</th>
+                    <th>Test Mode</th>
+                    <th>Last Date To Register</th>
+                    <th>Test Date</th>
+                </tr>
+                {{#each events}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{eligibility}}</td>
+                    <td>{{mode}}</td>
+                    <td>{{formatDate registrationDate 'Do MMMM YYYY'}}</td>
+                    <td>{{formatDate testDate 'Do MMMM YYYY'}}</td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    <footer>
+        <p>A project by Vaibhav Gupta</p>
+    </footer>
+</body>
+</html>
