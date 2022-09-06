@@ -59,7 +59,7 @@ hbs.registerHelper("formatDate", function (date, format) {
 hbs.registerPartials(path.join(__dirname, "./views/partials"));
 
 // Routes
-app.use("/", require("./routes/route"));
+app.use(require("./routes/route"));
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

@@ -8,7 +8,7 @@ const User = require("../models/User");
 const { isLoggedIn, isLoggedOut } = require("../middleware/auth");
 
 // get all events
-router.get("/events", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const events = await Event.find().sort({ registrationDate: 1 });
     res.render("main", { title: "Home", events });
@@ -163,7 +163,7 @@ router.get("/logout", function (req, res, next) {
   req.logout((err) => {
     if (err) return next();
   });
-  res.redirect("/events");
+  res.redirect("/");
 });
 
 module.exports = router;
