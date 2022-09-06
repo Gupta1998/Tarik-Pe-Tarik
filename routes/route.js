@@ -6,7 +6,6 @@ const router = express.Router();
 const Event = require("../models/Event");
 const User = require("../models/User");
 const { isLoggedIn, isLoggedOut } = require("../middleware/auth");
-const Story = require("../../storybooks/models/Story");
 
 // get all events
 router.get("/events", async (req, res) => {
