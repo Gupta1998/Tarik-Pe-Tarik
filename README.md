@@ -3,7 +3,7 @@
 Hi everyone!
 
 Tarik-Pe-Tarikh is a fun project to remember important dates.
-Please feel free to clone it and make a pull request to contribute.
+Please feel free to clone it or make a pull request to contribute.
 
 
 => Write "npm i" in the terminal to install all the dependencies.
