@@ -45,7 +45,7 @@ hbs.registerHelper("formatDate", function (date, format) {
 hbs.registerPartials(path.join(__dirname, "./views/partials"));
 
 // Routes
-app.use("/", require("./routes/route"));
+app.use(require("./routes/route"));
 
 const port = process.env.PORT || 3000;
 
