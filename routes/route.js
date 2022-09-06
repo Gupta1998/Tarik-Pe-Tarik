@@ -7,6 +7,16 @@ const Event = require("../models/Event");
 const User = require("../models/User");
 const { isLoggedIn, isLoggedOut } = require("../middleware/auth");
 
+// get all events
+router.get("/", async (req, res) => {
+  try {
+    const events = await Event.find().sort({ registrationDate: 1 });
+    res.render("showEvents", { title: "Home", events });
+  } catch (e) {
+    res.send(e);
+  }
+});
+
 // show main page
 router.get("/main", isLoggedIn, (req, res) => {
   res.render("main", { title: "Home" });
@@ -68,16 +78,6 @@ router.get("/setup", async (req, res) => {
 // show add event page
 router.get("/add", isLoggedIn, (req, res) => {
   res.render("main", { title: "Add Event" });
-});
-
-// get all events
-router.get("/", async (req, res) => {
-  try {
-    const events = await Event.find().sort({ registrationDate: 1 });
-    res.render("showEvents", { title: "Home", events });
-  } catch (e) {
-    res.send(e);
-  }
 });
 
 // add event handler
