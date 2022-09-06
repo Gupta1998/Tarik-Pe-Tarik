@@ -18,10 +18,11 @@
     "express-session": "^1.17.3",
     "hbs": "^4.2.0",
     "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
     "moment": "^2.29.4",
     "mongodb": "^4.9.1",
     "mongoose": "^6.5.4",
-    "passport": "^0.6.0",
+    "passport": "^0.5.3",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {

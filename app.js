@@ -4,6 +4,7 @@ const path = require("path");
 const dotenv = require("dotenv");
 const session = require("cookie-session");
 const moment = require("moment");
+const methodOverride = require("method-override");
 const passport = require("passport");
 const hbs = require("hbs");
 const connectDB = require("./config/db");
@@ -18,6 +19,18 @@ const app = express();
 // Body Parser
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+// Method override
+app.use(
+  methodOverride(function (req, res) {
+    if (req.body && typeof req.body === "object" && "_method" in req.body) {
+      // look in urlencoded POST bodies and delete it
+      let method = req.body._method;
+      delete req.body._method;
+      return method;
+    }
+  })
+);
 
 // Static
 app.use(express.static(path.join(__dirname, "/public")));
@@ -46,7 +59,7 @@ hbs.registerHelper("formatDate", function (date, format) {
 hbs.registerPartials(path.join(__dirname, "./views/partials"));
 
 // Routes
-app.use(require("./routes/route"));
+app.use("/", require("./routes/route"));
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

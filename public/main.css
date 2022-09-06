@@ -14,20 +14,20 @@ body {
 
 /* Add Events Style */
 .form-main  {
-    width: 50%;
+    width: 80%;
     margin: 20px auto;
     padding: 10px 30px;
-    background-color: wheat;
+    /* background-color: wheat;
     box-shadow: 0px 6px 15px rgba(227, 206, 206, 0.2);
-    border-radius: 16px;
+    border-radius: 16px; */
 }
 
 .form-main h1 {
-    color: #141414;
+    /* color: #141414; */
     font-size: 30px;
-    font-weight: bolder;
+    /* font-weight: bolder;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: uppercase; */
     margin-bottom: 5px;
 }
 
@@ -46,18 +46,18 @@ body {
 }
 
 .form-main label {
-    display: block;
-    color: #141414;
+    /* display: block;
+    color: #141414; */
     font-size: 16px;
     margin-bottom: 1px;
 }
 
-.form-main input {
+/* .form-main input {
     appearance: none;
     background: none;
     outline: none;
     border: none;
-}
+} */
 
 .form-main select {
     display: block;
@@ -75,48 +75,48 @@ body {
 }
 
 .form-main input:not([type="submit"]) {
-    display: block;
-    width: 100%;
+    /* display: block;
+    width: 100%; */
     padding: 10px 15px;
-    border-radius: 8px;
+    /* border-radius: 8px;
     background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
     transition: 0.4s;
     color: #222;
     font-size: 18px;
-    font-weight: 300;
-}
+    font-weight: 300; */
+} 
 
-.form-main input:not([type="submit"])::placeholder {
+/* .form-main input:not([type="submit"])::placeholder {
     color: #CCC;
-}
+} */
 
-.form-main input:not([type="submit"]):focus,
+/* .form-main input:not([type="submit"]):focus,
 .form-main input:not([type="submit"]):valid {
     background-color: #fff;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-}
+} */
 
 .form-main input[type="submit"] {
-    display: block;
+    /* display: block;
     width: 100%;
-    padding: 15px;
+    padding: 15px; */
     margin-top: 10px;
-    border-radius: 8px;
+    /* border-radius: 8px;
     background-color: #2575bc;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
     transition: 0.4s;
     color: #FFF;
     font-size: 20px;
     font-weight: 700;
-    cursor: pointer;
+    cursor: pointer; */
 }
 
 .form-main a {
     text-decoration: none;
     color: #222;
 }
-/* /Add Events Style */
+/* Add Events Style Ends */
 
 form {
     width: 400px;
@@ -125,6 +125,12 @@ form {
     background-color: wheat;
     box-shadow: 0px 6px 15px rgba(227, 206, 206, 0.2);
     border-radius: 16px;
+}
+
+@media  screen and(max-width: 400px ) {
+    form {
+        width: 200px;
+    }
 }
 
 form h1 {
@@ -228,6 +234,7 @@ header {
 .nav-links li {
     display: inline-block;
     list-style-type: none;
+    margin-left: 10px;
 }
 
 .nav-links li a {

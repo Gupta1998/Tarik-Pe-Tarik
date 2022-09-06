@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+        <header class="edit-header">
+        <h3>Tarik-Pe-Tarik...</h3>
+        <nav class="login">
+            <ul class="nav-links">  
+                <li><a href="/dashboard">Dashboard</a></li>   
+                <li><a href="/logout">Logout</a></li>   
+            </ul>
+        <nav>
+    </header>
+
+    <form action="/events/{{event._id}}" method="POST" class="form-main">
+        <input type="hidden" name="_method" value="PUT">
+        <div>
+            <h1>Edit Event</h1>
+	    </div>
+        <div class="form-group-main">
+            <label for="name">Event:</label>
+            <input type="text" id="name" name="name" value={{event.name}} required>
+        </div>
+        <div class="form-group-main">
+            <label for="eligibility">Criteria:</label>
+            <input type="text" id="eligibility" name="eligibility" value={{event.eligibility}}>
+        </div>
+        <div class="form-group-main">
+            <label for="mode">Mode:</label>
+            <input type="text" name="mode" id="mode" value={{event.mode}}>
+        </div>
+        <div class="form-group-main">
+            <label for="registrationDate">Reg.Date:</label>
+            <input type="date" id="registrationDate" name="registrationDate"><span>({{formatDate event.registrationDate 'Do MMMM YYYY'}})</span>
+        </div>
+        <div class="form-group-main">
+            <label for="testDate">Test Date:</label>
+            <input type="date" id="testDate" name="testDate"><span>({{formatDate event.testDate 'Do MMMM YYYY'}})</span>
+        </div>
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <footer>
+        <p>A project by Vaibhav Gupta</p>
+    </footer>
+</body>
+</html>
