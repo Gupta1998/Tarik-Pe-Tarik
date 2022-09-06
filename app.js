@@ -7,6 +7,7 @@ const moment = require("moment");
 const passport = require("passport");
 const hbs = require("hbs");
 const connectDB = require("./config/db");
+const PORT = process.env.PORT || 3000;
 
 // Load config
 dotenv.config({ path: "./config/config.env" });
@@ -47,6 +48,6 @@ hbs.registerPartials(path.join(__dirname, "./views/partials"));
 // Routes
 app.use(require("./routes/route"));
 
-const port = process.env.PORT || 3000;
-
-app.listen(port, console.log(`Server is running on port ${port}`));
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
