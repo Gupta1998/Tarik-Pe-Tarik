@@ -1,8 +1,7 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const path = require("path");
 const dotenv = require("dotenv");
-const session = require("cookie-session");
+const session = require("express-session");
 const moment = require("moment");
 const methodOverride = require("method-override");
 const passport = require("passport");
@@ -41,6 +40,7 @@ app.use(
     secret: "verygoodsecret",
     resave: false,
     saveUninitialized: true,
+    cookie: { maxAge: 1000 },
   })
 );
 

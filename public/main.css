@@ -217,6 +217,7 @@ footer {
 }
 
 footer p {
+    position: relative;
     text-align: center;
     color: wheat;
     overflow: hidden;
@@ -352,4 +353,18 @@ header {
 
 .action-btn i {
     color: #de2d2d;
+}
+
+.github {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    padding: 2px;
+    border: 2px solid wheat;
+    border-radius: 5px;
+    background: black;
+}
+.github a {
+    text-decoration: none;
+    color: wheat;
 }
