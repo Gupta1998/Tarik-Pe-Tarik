@@ -9,14 +9,14 @@
 	<link rel="stylesheet" href="main.css">
 </head>
 <body>
-	<header>
-        <h3>Tarik-Pe-Tarik...</h3>
-        <nav class="login">
+<header>
+        <nav class="nav-bar">
+			<h3>Tarik-Pe-Tarik...</h3>
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>   
             </ul>
-        <nav>
-    </header>
+        </nav>
+    </header>	
 	<form action="/login" method="post">
 	<div>
 		{{#if error}}
@@ -46,8 +46,6 @@
 		<input type="submit" value="Login" />
 	</div>
 </form>
-    <footer>
-        <p>A project by Vaibhav Gupta</p>
-    </footer>
+	{{> _footer}}
 </body>
 </html>

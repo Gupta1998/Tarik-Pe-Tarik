@@ -5,24 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
+    <link rel="icon" href="images/T.png">
     <script src="https://kit.fontawesome.com/6bf61ced32.js" crossorigin="anonymous"></script>
-    {{!-- <link rel="stylesheet" href="main.css"> --}}
+    <link rel="stylesheet" href="/main.css">
 </head>
 <body>
     <header>
-        <h3>Tarik-Pe-Tarik...</h3>
-        <nav class="login">
+        <nav class="nav-bar">
+            <h3>Tarik-Pe-Tarik...</h3>
             <ul class="nav-links">
                 <li><a href="/add">Add</a></li>   
                 <li><a href="/logout">Logout</a></li>   
             </ul>
-        <nav>
+        </nav>
     </header>
-    
-    <h6>Dashboard</h6>
-    <p>All events</p>
-    {{#if events}}
-    <table class="table">
+    <h1 class="dash-text">Dashboard</h1>
+    <div class="dash-table">
+        {{#if events}}
+        <table class="table">
         <thead>
             <tr>
                 <th>Name</th>
@@ -42,26 +42,30 @@
                 <td>{{formatDate registrationDate 'Do MMMM YYYY'}}</td>
                 <td>{{formatDate testDate 'Do MMMM YYYY'}}</td>
                 <td>
-                    <a href="/edit/{{_id}}" class="btn btn-float">
-                        <i class="fas fa-edit"></i>
-                    </a>
+                    <div class="action-btn">
+                        <a href="/edit/{{_id}}" class="btn btn-float">
+                            <i class="fas fa-edit"></i>
+                        </a>
 
-                    <form action="/events/{{_id}}" method="POST" id="delete-form">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button type="submit" class="btn red">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </form>
+                        <form action="/events/{{_id}}" method="POST" id="delete-form">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn red">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                    </div>
                 </td>
             </tr>
             {{/each}}
         </tbody>
     </table>
-    {{else}}
-    <p>You have not created any event</p>
     {{/if}}
+    </div>
+    {{#else}}
+    <p>You have not created any event</p>
+    {{/else}}
     <footer>
-        <p>A project by Vaibhav Gupta</p>
+        <p>A project by Vaibhav Gupta &copy; 2022</p>
     </footer>
 </body>
 </html>

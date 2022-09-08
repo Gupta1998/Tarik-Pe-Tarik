@@ -50,7 +50,7 @@ router.get("/login", isLoggedOut, (req, res) => {
     error: req.query.error,
   };
 
-  res.render("login", response);
+  res.render("events/login", response);
 });
 
 // login form handler
@@ -64,7 +64,7 @@ router.post(
 
 // show add event page
 router.get("/add", isLoggedIn, (req, res) => {
-  res.render("add", { title: "Add Event" });
+  res.render("events/add", { title: "Add Event" });
 });
 
 // add event handler
@@ -96,7 +96,7 @@ router.post("/events/add", isLoggedIn, async (req, res) => {
 router.get("/dashboard", isLoggedIn, async (req, res) => {
   try {
     const events = await Event.find().sort({ registrationDate: 1 });
-    res.render("dashboard", { events, title: "Dashboard" });
+    res.render("events/dashboard", { events, title: "Dashboard" });
   } catch (e) {
     res.render("error/500");
   }
@@ -110,7 +110,7 @@ router.get("/edit/:id", isLoggedIn, async (req, res) => {
       return res.render("error/400");
     }
 
-    res.render("edit", { event });
+    res.render("events/edit", { event });
   } catch (e) {
     res.render("error/500");
   }
@@ -151,7 +151,7 @@ router.delete("/events/:id", isLoggedIn, async (req, res) => {
     if (!event) {
       return res.render("error/400");
     }
-    await Event.remove({ _id: req.params.id });
+    await Event.deleteOne({ _id: req.params.id });
     res.redirect("/dashboard");
   } catch (e) {
     res.render("error/500");

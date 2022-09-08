@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
     <link rel="icon" href="images/T.png">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/main.css">
 </head>
 <body>
     <header>
-        <h3>Tarik-Pe-Tarik...</h3>
-        <nav class="login">
+        <nav class="nav-bar">
+            <h3>Tarik-Pe-Tarik...</h3>
             <ul class="nav-links">
                 <li><a href="/login">Login</a></li>   
             </ul>
-        <nav>
+        </nav>
     </header>
-    
+
     <div class="image-wrapper">
         <img src="images/tarikh pe tarikh.png" class="image">
     </div>
@@ -43,8 +43,6 @@
                 {{/each}}
             </table>
         </div>
-    <footer>
-        <p>A project by Vaibhav Gupta</p>
-    </footer>
+    {{> _footer}}
 </body>
 </html>

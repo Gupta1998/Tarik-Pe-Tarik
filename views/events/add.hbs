@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
     <link rel="icon" href="images/T.png">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/main.css">
 </head>
 <body>
     <header>
-        <h3>Tarik-Pe-Tarik...</h3>
-        <nav class="login">
+        <nav class="nav-bar">
+            <h3>Tarik-Pe-Tarik...</h3>
             <ul class="nav-links">
                 <li><a href="/dashboard">Dashboard</a></li>   
                 <li><a href="/logout">Logout</a></li>   
             </ul>
-        <nav>
+        </nav>
     </header>
     <form action="/events/add" method="POST" class="form-main">
         <div>
@@ -50,8 +50,6 @@
             <input type="submit" value="Submit">
         </div>
     </form>
-    <footer>
-        <p>A project by Vaibhav Gupta</p>
-    </footer>
+    {{> _footer}}
 </body>
 </html>
