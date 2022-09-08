@@ -371,19 +371,16 @@ header {
 
 @media screen and (max-width: 500px) {
     footer {
-        height: 70px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        height: 40px;
     }
     footer p {
         position: absolute;
         top: 5px;
+        left: 8px;
     }
     .github {
         position: none;
-        top: 33px;
-        right: 160px;
+        top: 0px;
+        right: 0;
     }
 }
