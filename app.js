@@ -40,7 +40,7 @@ app.use(
     secret: "verygoodsecret",
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 1000 },
+    cookie: { maxAge: 600000 },
   })
 );
 
